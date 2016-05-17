@@ -1,0 +1,124 @@
+// ----------------------------------------------------------------------
+// globals/base
+// ----------------------------------------------------------------------
+@import 'globals/base/variables';
+@import 'globals/base/mixins';
+@import 'globals/base/extends';
+@import 'globals/base/reset';
+@import 'globals/base/fonts';
+@import 'globals/base/images';
+
+// ----------------------------------------------------------------------
+// Layout
+// ----------------------------------------------------------------------
+// @import 'grid-system';
+// @import 'grid';
+
+// ----------------------------------------------------------------------
+// globals/modules
+// ----------------------------------------------------------------------
+@import 'globals/modules/buttons';
+@import 'globals/modules/header';
+@import 'globals/modules/sub-header';
+@import 'globals/modules/social';
+@import 'globals/modules/footer';
+@import 'globals/modules/home/menu';
+
+
+// ----------------------------------------------------------------------
+// local style
+// ----------------------------------------------------------------------
+
+.pa-cont {
+    margin: 3em auto;
+    max-width: $screen-md-min;
+    padding: 0 15px;
+
+    h1 {
+        margin-bottom: 0.5em;
+    }
+
+    h2 {
+        margin: 1em 0;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .personnel {
+        text-align: justify;
+
+        .profile-block {
+            width: 24%;
+            display: inline-block;
+            vertical-align: top;
+            background-color: map-get($army-branding, grey10);
+            margin: 0 0 20px;
+            min-height: 318px;
+            text-align: center;
+
+            .block-inner {
+                padding: 20px;
+            }
+
+            .title {
+                font-weight: 700;
+                margin: 0 0 5px;
+            }
+            .name {
+                margin: 0 0 10px;
+            }
+        }
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+        }
+        @include breakpoints(nav tablet) {
+            .profile-block {
+                width: 49%;
+                margin: 0 0 10px;
+                min-height: 305px;
+            }
+        }
+        @include breakpoints(mobile) {
+            .profile-block {
+                width: auto;
+                display: block;
+                margin: 0 0 10px;
+                min-height: 0;
+                text-align: left;
+            }
+            img {
+                float: left;
+                margin: 0 15px 0 0;
+            }
+        }
+    }
+
+    .resources {
+        > div {
+            display: inline-block;
+            margin: 15px 3px 0 0;
+            text-align: center;
+            vertical-align: top;
+            width: 100px;
+        }
+
+        @include breakpoints(mobile nav) {
+            text-align: center;
+        }
+
+        @include breakpoints(mobile) {
+            > div {
+                width: 90px;
+            }
+        }
+    }
+}

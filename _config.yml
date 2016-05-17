@@ -1,0 +1,18 @@
+# setting env to production will minify the html
+#env: production
+env: dev
+
+exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'sftpCache.json', 'node_modules', 'us-army-homepage']
+
+gems:
+  - octopress-minify-html
+
+sass:
+  sass_dir: _scss
+  style: compressed
+
+title: Army Public Affairs
+
+#url: http://www.army.mil/info/institution/publicAffairs/
+#url: http://frontend.ardev.us/development/info/institution/publicAffairs/
+#url: http://127.0.0.1:4000
