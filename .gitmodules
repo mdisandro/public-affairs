@@ -1,0 +1,3 @@
+[submodule "us-army-homepage"]
+	path = us-army-homepage
+	url = git@bitbucket.org:armydotmil/us-army-homepage.git
