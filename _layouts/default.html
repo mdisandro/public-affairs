@@ -17,9 +17,9 @@
 <body id="{{ page.active }}" class="{{ page.id }}">
     {% include globals/header.blade.php %}
     
-    {% include masthead.html %}
-    
     <div class="main">
+        {% include banner.html %}
+        
         {{ content }}
     </div>
     

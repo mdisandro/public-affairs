@@ -1,7 +1,5 @@
 .leader-blocks {
-  background: $secondary-background-color;
   overflow: hidden;
-  padding: 30px;
 
   h4 { color: map-get($army-branding, white); }
 
@@ -16,7 +14,6 @@
 
       a {
         display: block; 
-        color: map-get($army-branding, white);
         margin: 0 auto;
         max-width: 270px;
         &:hover {
@@ -43,7 +40,6 @@
       }
     
       .title {
-        color: map-get($army-branding, gold);
         font: 400 .875em $font-family;
         margin: 17px 0 0;
         text-transform: uppercase;

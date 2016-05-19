@@ -23,19 +23,83 @@
 @import 'globals/modules/social';
 @import 'globals/modules/footer';
 @import 'globals/modules/home/menu';
+@import 'globals/modules/org/banner';
 @import 'project-mixins';
 @import 'grid-system';
 @import 'grid';
 @import 'defaults';
 @import 'leader-blocks';
-@import 'masthead';
+// @import 'masthead';
 @import 'simple-links-list'; // use global module, when its ready
 
 
 // ----------------------------------------------------------------------
 // local style
 // ----------------------------------------------------------------------
+.org-banner .container {
+  margin: 0 auto;
+  .org-inner {
+    position: relative;
+    h2 {
+      text-align: left;
+      margin: 0;
+      &:after {
+        content: none;
+      }
 
+      @include breakpoints(mobile) {
+        text-align: center;
+      }
+    }
+    .left-container {
+      max-width: 10000px;
+      padding: 0;
+    }
+    h1 {
+      padding: 0;
+    }
+    .table-center {
+      display: table;
+      width: 100%;
+
+      &::after {
+        display: table-cell;
+        width: 250px;
+        height: 150px;
+        content: "";
+      }
+
+      .cell {
+        vertical-align: middle;
+        display: table-cell;
+      }
+    }
+
+    @include breakpoints(nav) {
+      .table-center::after {
+        width: 170px;
+      }
+      .logo {
+        right: 0;
+      }
+    }
+    @include breakpoints(mobile) {
+      .table-center {
+        display: block;
+        &::after {
+          display: none;
+        }
+        .cell {
+          display: block;
+        }
+      }
+      h1 { padding: 15px 0 0; }
+    }
+  }
+  .org-inner * {
+    box-sizing: content-box;
+  }
+}
 .profile-page {
   img.profile-image {
     float: right;

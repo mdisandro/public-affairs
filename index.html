@@ -3,6 +3,11 @@ layout: default
 pageName: Army Public Affairs
 pageDesc: Public Affairs fulfills the Army's obligation to keep the American people and the Army informed, and helps to establish the conditions that lead to confidence in America's Army and its readiness to conduct operations in peacetime, conflict and war.
 pageKeywords: US Army, Army, Army News, ARMY.mil, Headlines, Public Affairs, Official Army Homepage, Hot Topics, Images, Video, Audio, AMP, Social Media, Leaders, History, Organization, Service, AKO
+pageImage: /e2/images/rv7/org/logos/ocpa.png
+pageImageAlt: U.S. Army Office of the Chief of Public Affairs
+socialLinks:
+    - network: Facebook
+      link: https://www.facebook.com/ArmyOCPA/
 profiles:
     - link: chief
       title: Chief of Public Affairs
@@ -11,7 +16,7 @@ profiles:
       name: Malcolm B. Frost
     - link: principaldeputy
       title: Principal Deputy Chief
-      img: brady_lg
+      img: brady
       name: Michael P. Brady
       add_s: s
     - link: deputy
@@ -22,18 +27,19 @@ profiles:
       add_s: s
     - link: sgm
       title: Sergeant Major of Public Affairs
-      img: velazquez_lg
+      img: velazquez
       rank: Sergeant Major
       name: Jose Velazquez
 ---
 <div class="container">
     <div class="inner-container">
+        <h2>LEADERS</h2>
         <div class="leader-blocks">
             <ul>
                 {% for profile in page.profiles %}
                 <li>
                     <a href="{{ profile.link }}/" title="visit the {{ profile.title }}'{{ profile.add_s }} profile">
-                        <span class="image"><img src="/e2/rv5_images/main/info/institution/publicAffairs/{{ profile.img }}.jpg" alt="{{ profile.title }}" /></span>
+                        <span class="image"><img src="/e2/images/rv7/publicaffairs/{{ profile.img }}.jpg" alt="{{ profile.title }}" /></span>
                         <span class="title">{{ profile.title }}</span>
                         <span class="name">{% if profile.rank %}{{ profile.rank }}<br />{% endif %}{{ profile.name }}</span>
                         <span class="profile-link">visit profile</span>
@@ -48,7 +54,7 @@ profiles:
 
         <h2>MEDIA RELATIONS DIVISION</h2>                                       
         <p><a href="mailto:usarmy.pentagon.hqda-ocpa.mbx.mrd-press-desk@mail.mil" title="Email the Media Relations Division press desk">E-mail for MEDIA QUERIES</a></p>
-        <p><a href="/e2/rv5_downloads/info/institution/publicAffairs/MRD_phone_roster.pdf" title="Media Relations Division phone roster PDF">Contact information for MEDIA QUERIES</a></p>
+        <p><a href="/e2/downloads/rv7/publicaffairs/MRD_phone_roster.pdf" title="Media Relations Division phone roster PDF">Contact information for MEDIA QUERIES</a></p>
 
         <h2>COMMUNITY RELATIONS</h2>
         <p>Located in the Pentagon, the <a href="//www.army.mil/comrel/">Community Relations Division</a> coordinates Army community outreach nationwide by connecting Army Senior Leaders with communities and developing
@@ -72,7 +78,7 @@ profiles:
                 <li><a href="http://soldiers.dodlive.mil/" title="Soldiers Magazine">Soldiers Magazine</a></li>
                 <li><a href="http://www.dvidshub.net/" title="Defense Video &amp; Imagery Distribution System">Defense Video &amp; Imagery Distribution System</a></li>
                 <li><a href="//www.army.mil/create/" title="Army.mil Create">Army.mil Create</a></li>
-                <li><a href="/e2/rv5_downloads/armyDOTmil_style_guide.pdf" title="Army.mil Style Guide">Army.mil Style Guide</a></li>
+                <li><a href="/e2/downloads/rv7/armyDOTmil_style_guide.pdf" title="Army.mil Style Guide">Army.mil Style Guide</a></li>
                 <li><a href="//www.army.mil/media/socialmedia/" title="Army Social Media">Army Social Media</a></li>
             </ul>
         </div>

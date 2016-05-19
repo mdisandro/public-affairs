@@ -133,6 +133,11 @@ var Helper = function () {
                 el.className = el.className.replace(reg, ' ');
             }
         }
+    }, {
+        key: 'toggleClass',
+        value: function toggleClass(el, className) {
+            if (this.hasClass(el, className)) this.removeClass(el, className);else this.addClass(el, className);
+        }
     }]);
 
     return Helper;
