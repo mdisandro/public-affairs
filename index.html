@@ -6,132 +6,75 @@ pageKeywords: US Army, Army, Army News, ARMY.mil, Headlines, Public Affairs, Off
 profiles:
     - link: chief
       title: Chief of Public Affairs
-      img: frost_sm
+      img: frost
       rank: Brigadier General
       name: Malcolm B. Frost
     - link: principaldeputy
       title: Principal Deputy Chief
-      img: brady_sm
+      img: brady_lg
       name: Michael P. Brady
       add_s: s
     - link: deputy
       title: Deputy Chief
-      img: hannah_sm
+      img: hannah
       rank: Colonel
       name: Amy Hannah
       add_s: s
     - link: sgm
       title: Sergeant Major of Public Affairs
-      img: velazquez_sm
+      img: velazquez_lg
       rank: Sergeant Major
       name: Jose Velazquez
 ---
-<section class="pa-cont">
-    <h1>{{ page.pageName }}</h1>
+<div class="container">
     <div class="inner-container">
-        <div class="personnel">
-            {% for profile in page.profiles %}
-            <div class="profile-block">
-                <div class="block-inner">
+        <div class="leader-blocks">
+            <ul>
+                {% for profile in page.profiles %}
+                <li>
                     <a href="{{ profile.link }}.html" title="visit the {{ profile.title }}'{{ profile.add_s }} profile">
-                        <img src="/e2/rv5_images/main/info/institution/publicAffairs/{{ profile.img }}.jpg" alt="{{ profile.title }}" />
+                        <span class="image"><img src="/e2/rv5_images/main/info/institution/publicAffairs/{{ profile.img }}.jpg" alt="{{ profile.title }}" /></span>
+                        <span class="title">{{ profile.title }}</span>
+                        <span class="name">{% if profile.rank %}{{ profile.rank }}<br />{% endif %}{{ profile.name }}</span>
+                        <span class="profile-link">visit profile</span>
                     </a>
-                    <div class="title">{{ profile.title }}</div>
-                    <div class="name">{% if profile.rank %}{{ profile.rank }}<br />{% endif %}{{ profile.name }}</div>
-                    <a href="{{ profile.link }}.html" title="visit the {{ profile.title }}'{{ profile.add_s }} profile">visit profile</a>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            {% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
         </div>
 
         <h2>MISSION</h2>
         <p>Public Affairs fulfills the Army's obligation to keep the American people and the Army informed, and helps to establish the conditions that lead to confidence in America's Army and its readiness to conduct operations in peacetime, conflict and war.</p>
 
         <h2>MEDIA RELATIONS DIVISION</h2>                                       
-        <p><a href="mailto:usarmy.pentagon.hqda-ocpa.mbx.mrd-press-desk@mail.mil">E-mail for MEDIA QUERIES</a></p>    
-        <p><a href="/e2/rv5_downloads/info/institution/publicAffairs/MRD_phone_roster.pdf" onclick="_gaq.push(['_trackEvent', 'downloads', 'pdf', '/e2/rv5_downloads/info/institution/publicAffairs/MRD_phone_roster.pdf', , true]);">Contact information for MEDIA QUERIES</a></p>
+        <p><a href="mailto:usarmy.pentagon.hqda-ocpa.mbx.mrd-press-desk@mail.mil" title="Email the Media Relations Division press desk">E-mail for MEDIA QUERIES</a></p>
+        <p><a href="/e2/rv5_downloads/info/institution/publicAffairs/MRD_phone_roster.pdf" title="Media Relations Division phone roster PDF">Contact information for MEDIA QUERIES</a></p>
 
         <h2>COMMUNITY RELATIONS</h2>
-        <p>Located in the Pentagon, the <a href="//www.army.mil/comrel/" target="_blank">Community Relations Division</a> coordinates Army community outreach nationwide by connecting Army Senior Leaders with communities and developing
+        <p>Located in the Pentagon, the <a href="//www.army.mil/comrel/">Community Relations Division</a> coordinates Army community outreach nationwide by connecting Army Senior Leaders with communities and developing
             relationships with organizations, businesses, sports teams and individuals who support Soldiers, Families and Veterans.</p>
         <p><a href="mailto:usarmy.pentagon.hqda-ocpa.list.crd1@mail.mil">Email the Community Relations team</a></p>
 
         <h2>RESOURCES</h2>
         <p>To receive new updates, subscribe to the <a href="//www.army.mil/arnews">ARNEWS</a> and <a href="http://www.defense.gov/releases/">News Releases</a> RSS Feeds.</p>
-        <div class="resources">
-            <div>
-                <a href="https://www.us.army.mil/suite/grouppage/27504">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/paportal.jpg" alt="Public Affairs Portal" />
-                    Public Affairs Portal (AKO)
-                </a>
-            </div>
-            <div>
-                 <a href="//www.army.mil/create/content/core.html">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/core.jpg" alt="Army CORE" />
-                    Army CORE: Publish content for Army.mil
-                </a>
-            </div>
-            <div>
-                <a href="//www.army.mil/klw/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/keith.jpg" alt="Maj. Gen. Keith L. Ware" />
-                    Maj. Gen. Keith L. Ware Competition
-                </a>
-            </div>
-            <div>
-                <a href="http://www.armyfieldband.com/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/band.jpg" alt="Army Field Band" />
-                    Army Field Band
-                </a>
-            </div>
-            <div>
-                <a href="//www.army.mil/standto/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/standto.jpg" alt="STAND-TO!" />
-                    STAND-TO!
-                </a>
-            </div>
-            <div>
-                <a href="//www.army.mil/internship/index.htm">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/civilian.jpg" alt="Civilian Intern Opportunities in Army Public Affairs" />
-                    Civilian Intern Opportunities
-                </a>
-            </div>
-            <div>
-                <a href="http://www.facebook.com/ArmyOCPA/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/facebook.jpg" alt="Facebook" />
-                    OCPA Facebook
-                </a>
-            </div>
-            <div>
-                <a href="http://soldiers.dodlive.mil/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/soldiers.jpg" alt="Soldiers Magazine" />
-                    Soldiers Magazine
-                </a>                             
-            </div>
-            <div>
-                <a href="http://www.dvidshub.net/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/dvids.jpg" alt="Defense Video &amp; Imagery Distribution System" />
-                    Defense Video &amp; Imagery Distribution System
-                </a>
-            </div>
-            <div>
-                <a href="//www.army.mil/create/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/create.jpg" alt="Army.mil Create" />
-                    Army.mil Create
-                </a>
-            </div>
-            <div>
-                <a href="/e2/rv5_downloads/armyDOTmil_style_guide.pdf">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/style_guide.jpg" alt="Army.mil Style Guide" />
-                    Army.mil Style Guide
-                </a>
-            </div>
-            <div>
-                <a href="//www.army.mil/media/socialmedia/">
-                    <img src="/e2/rv5_images/main/info/institution/publicAffairs/socialmedia.jpg" alt="Army Social Media" />
-                    Army Social Media
-                </a>
-            </div>
+        <div class="simple-links-list">
+            <ul class="link-column">
+                <li><a href="//www.army.mil/info/institution/publicAffairs/halloffame?from=pa_ad" title="Army Public Affairs Hall of Fame">Public Affairs Hall of Fame</a></li>
+                <li><a href="https://www.us.army.mil/suite/grouppage/27504" title="Public Affairs Portal">Public Affairs Portal (AKO)</a></li>
+                <li><a href="//www.army.mil/create/content/core.html" title="Army CORE">Army CORE: Publish content for Army.mil</a></li>
+                <li><a href="//www.army.mil/klw/" title="Maj. Gen. Keith L. Ware">Maj. Gen. Keith L. Ware Competition</a></li>
+                <li><a href="http://www.armyfieldband.com/" title="Army Field Band">Army Field Band</a></li>
+                <li><a href="//www.army.mil/standto/" title="STAND-TO!">STAND-TO!</a></li>
+                <li><a href="//www.army.mil/internship/index.htm" title="Civilian Intern Opportunities in Army Public Affairs">Civilian Intern Opportunities</a></li>
+            </ul>
+            <ul class="link-column">
+                <li><a href="http://www.facebook.com/ArmyOCPA/" title="Facebook">OCPA Facebook</a></li>
+                <li><a href="http://soldiers.dodlive.mil/" title="Soldiers Magazine">Soldiers Magazine</a></li>
+                <li><a href="http://www.dvidshub.net/" title="Defense Video &amp; Imagery Distribution System">Defense Video &amp; Imagery Distribution System</a></li>
+                <li><a href="//www.army.mil/create/" title="Army.mil Create">Army.mil Create</a></li>
+                <li><a href="/e2/rv5_downloads/armyDOTmil_style_guide.pdf" title="Army.mil Style Guide">Army.mil Style Guide</a></li>
+                <li><a href="//www.army.mil/media/socialmedia/" title="Army Social Media">Army Social Media</a></li>
+            </ul>
         </div>
     </div>
-</section>
+</div>

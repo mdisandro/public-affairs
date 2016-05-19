@@ -23,125 +23,23 @@
 @import 'globals/modules/social';
 @import 'globals/modules/footer';
 @import 'globals/modules/home/menu';
+@import 'project-mixins';
+@import 'grid-system';
+@import 'grid';
+@import 'defaults';
+@import 'leader-blocks';
+@import 'masthead';
+@import 'simple-links-list'; // use global module, when its ready
 
 
 // ----------------------------------------------------------------------
 // local style
 // ----------------------------------------------------------------------
 
-.pa-cont {
-    margin: 3em auto;
-    max-width: $screen-md-min;
-    padding: 0 15px;
-
-    h1 {
-        margin-bottom: 1em;
-    }
-
-    h2 {
-        margin: 2em 0 1em;
-    }
-
-    a {
-        text-decoration: none;
-        font-weight: 600;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    p {
-        margin: 0 0 1em;
-    }
-
-    .personnel {
-        text-align: justify;
-
-        .profile-block {
-            width: 24%;
-            display: inline-block;
-            vertical-align: top;
-            background-color: map-get($army-branding, grey10);
-            margin: 0 0 20px;
-            min-height: 318px;
-            text-align: center;
-
-            .block-inner {
-                padding: 20px;
-            }
-
-            .title {
-                font-weight: 700;
-                margin: 0 0 5px;
-            }
-            .name {
-                margin: 0 0 10px;
-            }
-        }
-        &:after {
-            content: "";
-            display: inline-block;
-            width: 100%;
-        }
-        @include breakpoints(nav tablet) {
-            .profile-block {
-                width: 49%;
-                margin: 0 0 10px;
-                min-height: 305px;
-            }
-        }
-        @include breakpoints(mobile) {
-            .profile-block {
-                width: auto;
-                display: block;
-                margin: 0 0 10px;
-                min-height: 0;
-                text-align: left;
-            }
-            img {
-                float: left;
-                margin: 0 15px 0 0;
-                max-width: 40%;
-            }
-            &:after {
-                display: none;
-            }
-        }
-    }
-
-    .resources {
-        > div {
-            display: inline-block;
-            margin: 15px 3px 0 0;
-            text-align: center;
-            vertical-align: top;
-            width: 100px;
-            font-size: 0.9em;
-        }
-
-        @include breakpoints(mobile nav) {
-            text-align: center;
-        }
-
-        @include breakpoints(mobile) {
-            > div {
-                width: 90px;
-            }
-        }
-    }
-
-    &.profile-page {
-        h1 {
-            margin-bottom: 0.2em;
-        }
-        h2 {
-            margin-top: 0em;
-        }
-        img.profile-image {
-            float: right;
-            margin: 0 0 20px 20px;
-            max-width: 45%;
-        }
-    }
+.profile-page {
+  img.profile-image {
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 45%;
+  }
 }

@@ -51,7 +51,31 @@ module.exports = function(grunt) {
                 cache: 'sftpCache.json',
                 src: '_site/',
                 dest: '/www/development/<%= pkg.name %>',
-                exclusions: ['build/', 'node_module/', 'Gruntfile.js', 'package.json', 'readme.md', '.sass-cache', '.git', '.gitignore', '.gitmodules', '.babelrc'],
+                exclusions: ['_site/e2'],
+                serverSep: '/',
+                concurrency: 4,
+                progress: true
+            },
+            e2CSSbuild: {
+                auth: {
+                    host: 'frontend.ardev.us',
+                    authKey: 'privateKey'
+                },
+                cache: 'sftpCache.json',
+                src: '_site/e2/css/rv7/<%= pkg.name %>',
+                dest: '/www/development/e2/css/rv7/<%= pkg.name %>',
+                serverSep: '/',
+                concurrency: 4,
+                progress: true
+            },
+            e2JSbuild: {
+                auth: {
+                    host: 'frontend.ardev.us',
+                    authKey: 'privateKey'
+                },
+                cache: 'sftpCache.json',
+                src: '_site/e2/js/rv7/<%= pkg.name %>',
+                dest: '/www/development/e2/js/rv7/<%= pkg.name %>',
                 serverSep: '/',
                 concurrency: 4,
                 progress: true
@@ -66,30 +90,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        replace: {
-            cdn: {
-                src: ['*.html', '_includes/*.html', '_layouts/*.html', '_js/*.js', '_scss/*.scss'],
-                overwrite: true,
-                replacements: [{
-                    from: 'http://frontend.ardev.us/development/publicaffairs/e2/',
-                    to: '/e2/'
-                }, {
-                    from: 'http://frontend.ardev.us/api/',
-                    to: 'https://www.army.mil/api/'
-                }]
-            },
-            dev: {
-                src: ['*.html', '_includes/*.html', '_layouts/*.html', '_js/*.js', '_scss/*.scss'],
-                overwrite: true,
-                replacements: [{
-                    from: /\/e2\//g,
-                    to: 'http://frontend.ardev.us/development/publicaffairs/e2/'
-                }, {
-                    from: 'https://www.army.mil/api/',
-                    to: 'http://frontend.ardev.us/api/'
-                }]
-            }
-        },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -100,8 +100,7 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: [
-                        '_js/bundled/header.js',
-                        '_js/bundled/publicaffairs.js'
+                        '_js/bundled/header.js'
                     ],
                     dest: 'e2/js/rv7/<%= pkg.name %>/main.min.js'
                 }]

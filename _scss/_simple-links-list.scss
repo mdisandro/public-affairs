@@ -1,0 +1,46 @@
+.simple-links-list {
+  ul {
+    margin-top: -7px;
+
+    li {
+      list-style-type: disc;
+      margin: 0 0 0 15px;
+      padding: 0;
+      a {
+        display: block;
+        padding: 7px 0 7px 5px;
+        position: relative;
+        vertical-align: top;
+        top: 2px;
+      }
+    }
+
+    &.link-column {
+      float: left;
+      width: 45%;
+      margin-right: 3%;
+    }
+  }
+
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  
+  @include breakpoints(mobile nav tablet) {
+    ul {
+      margin: 0;
+
+      &.link-column {
+        float: none;
+        width: auto;
+        margin-right: 0;
+      }
+
+      &:nth-of-type(1) {
+        margin-top: -7px;
+      }
+    }
+  }
+}

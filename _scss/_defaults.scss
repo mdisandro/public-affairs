@@ -1,0 +1,67 @@
+h2 {
+  font: 700 1.5em/1.25em $font-family;
+  margin: 100px 0 54px;
+  text-transform: uppercase;
+  transition: font-size 0.25s ease 0s;
+
+  &:after {
+    background-color: map-get($army-branding, gold);
+    content: "";
+    display: block;
+    height: 5px;
+    margin: 20px 0 0;
+    width: 60px;
+  }
+
+  @include breakpoints(mobile nav tablet) {
+    font: 700 1.3em $font-family;
+    margin-bottom: 40px;
+    text-align: center;
+    
+    &:after {
+      margin: 10px auto 0;
+    }
+  }
+
+  // 700 - 992
+  @include breakpoints(tablet lg_tablet) {
+    margin-top: 60px;
+  }
+  
+  // 480 - 699
+  @include breakpoints(nav mobile) {
+    margin-top: 50px;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0 0 1em;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.container *,
+.container *:after,
+.container *:before {
+  @include box-sizing(border-box);
+}
+
+// container section creates top margin, not headings
+.container .inner-container > h1:first-child,
+.container .inner-container > h2:first-child,
+.container .inner-container > h3:first-child,
+.container .inner-container > h4:first-child,
+.container .inner-container > h5:first-child,
+.container .inner-container > h6:first-child {
+    margin-top: 0;
+}

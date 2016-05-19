@@ -1,0 +1,99 @@
+.leader-blocks {
+  background: $secondary-background-color;
+  overflow: hidden;
+  padding: 30px;
+
+  h4 { color: map-get($army-branding, white); }
+
+  ul {
+    @include row(true);
+
+    li {
+      @include span(3);
+      @include img-grayscale-hover('a');
+      color: map-get($army-branding, white);
+      text-align: center;
+
+      a {
+        display: block; 
+        color: map-get($army-branding, white);
+        margin: 0 auto;
+        max-width: 270px;
+        &:hover {
+          text-decoration: none;
+          .profile-link {
+            text-decoration: underline;
+          }
+        }
+      }
+    
+      .image {
+        @include row();
+        padding: 100% 0 0;
+        position: relative;
+
+        img {
+          bottom: auto;
+          top: -10px;
+          left: 0;
+          right: 0;
+          width: auto;
+          max-width: 100%;
+        }
+      }
+    
+      .title {
+        color: map-get($army-branding, gold);
+        font: 400 .875em $font-family;
+        margin: 17px 0 0;
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .name {
+        font: 700 1.25em $font-family;
+        display: block;
+      }
+    }
+  }
+  
+  ul {
+    @include breakpoints(lg_tablet sm_desktop desktop large really_big) {
+      li a {
+        &:hover, &:focus {
+          .title:after { width: 100%; }
+        }
+      }
+    }
+    @include breakpoints(lg_tablet tablet nav) {
+      li {
+        @include span(6);
+        margin-bottom: 30px;
+        
+        &:nth-child(3n), &:last-child { margin-bottom: 0; }
+        &:nth-child(3) { clear: both; }
+      }
+    }
+    @include breakpoints(tablet) {
+      li {
+        min-height: 325px;
+      }
+    }
+    @include breakpoints(mobile) {
+      li {
+        @include span(12);
+        margin-bottom: 30px;
+      
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+    @include breakpoints(lg_tablet tablet nav mobile) {
+      li .image { padding: 75% 0 0; }
+    }
+  }
+
+  @include breakpoints(mobile) {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+}
