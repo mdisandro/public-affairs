@@ -1,3 +1,5 @@
+public
+.env
 src/to_origin/rv5_images/**/*
 src/to_origin/rv5_downloads/**/*
 build
@@ -13,3 +15,10 @@ _site
 .jekyll-metadata
 src/e2/rv5_images/**/*
 src/e2/rv5_downloads/**/*
+e2/images/rv7
+e2/downloads/rv7
+/e2/fonts
+/e2/images
+*.json
+!package.json
+

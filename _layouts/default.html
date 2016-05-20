@@ -1,14 +1,22 @@
+---
+bannerName: Army Public Affairs
+bannerImage: /e2/images/rv7/org/logos/ocpa.png
+bannerImageAlt: U.S. Army Office of the Chief of Public Affairs
+bannerSocial:
+    - network: Facebook
+      link: https://www.facebook.com/ArmyOCPA/
+---
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <title>{{ page.pageName }} | The United States Army</title>
-    <meta property="keywords" name="keywords" content="US Army, Army, Army News, ARMY.mil, Headlines, Public Affairs, Official Army Homepage, Hot Topics, Images, Video, Audio, AMP, Social Media, Leaders, History, Organization, Service, AKO"/>
-    <meta property="description" name="description" content="Public Affairs fulfills the Army's obligation to keep the American people and the Army informed, and helps to establish the conditions that lead to confidence in America's Army and its readiness to conduct operations in peacetime, conflict and war."/>
-    <meta property="og:title" content="Frequently Asked Questions | The United States Army"/>
-    <meta property="og:site_name" content="Frequently Asked Questions | The United States Army"/>
-    <meta property="og:description" content="Frequently Asked Questions | The United States Army"/>
+    <title>{% if page.pageTitle %}{{ page.pageTitle }}{% else %}{{ page.bannerName }}{% endif %} | The United States Army</title>
+    <meta property="keywords" name="keywords" content="{{ page.pageKeywords }}"/>
+    <meta property="description" name="description" content="{{ page.pageDesc }}"/>
+    <meta property="og:title" content="{{ page.bannerName }} | The United States Army"/>
+    <meta property="og:site_name" content="{{ page.bannerName }} | The United States Army"/>
+    <meta property="og:description" content="{{ page.bannerName }} | The United States Army"/>
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.army.mil/publicaffairs{{ page.url }}">
     <link rel="canonical" href="http://www.army.mil/publicaffairs{{ page.url }}">
@@ -17,9 +25,9 @@
 <body id="{{ page.active }}" class="{{ page.id }}">
     {% include globals/header.blade.php %}
     
-    {% include masthead.html %}
-    
     <div class="main">
+        {% include banner.html %}
+
         {{ content }}
     </div>
     

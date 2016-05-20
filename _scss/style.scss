@@ -23,102 +23,94 @@
 @import 'globals/modules/social';
 @import 'globals/modules/footer';
 @import 'globals/modules/home/menu';
+@import 'project-mixins';
+@import 'grid-system';
+@import 'grid';
+@import 'banner';
+@import 'defaults';
+@import 'leader-blocks';
+// @import 'masthead';
+@import 'simple-links-list'; // use global module, when its ready
 
 
 // ----------------------------------------------------------------------
 // local style
 // ----------------------------------------------------------------------
-
-.pa-cont {
-    margin: 3em auto;
-    max-width: $screen-md-min;
-    padding: 0 15px;
-
-    h1 {
-        margin-bottom: 0.5em;
-    }
-
+.org-banner .container {
+  margin: 0 auto;
+  .org-inner {
+    position: relative;
     h2 {
-        margin: 1em 0;
-    }
+      text-align: left;
+      margin: 0;
+      &:after {
+        content: none;
+      }
 
-    a {
+      @include breakpoints(mobile) {
+        text-align: center;
+      }
+    }
+    .left-container {
+      max-width: 10000px;
+      padding-right: 0;
+    }
+    h1 {
+      padding-right: 0;
+      a {
         text-decoration: none;
-        font-weight: 600;
+        color: map-get($army-branding, gold);
+        font-weight: 700;
+      }
+    }
+    .table-center {
+      display: table;
+      width: 100%;
 
-        &:hover {
-            text-decoration: underline;
-        }
+      &::after {
+        display: table-cell;
+        width: 250px;
+        height: 150px;
+        content: "";
+      }
+
+      .cell {
+        vertical-align: middle;
+        display: table-cell;
+      }
     }
 
-    .personnel {
-        text-align: justify;
-
-        .profile-block {
-            width: 24%;
-            display: inline-block;
-            vertical-align: top;
-            background-color: map-get($army-branding, grey10);
-            margin: 0 0 20px;
-            min-height: 318px;
-            text-align: center;
-
-            .block-inner {
-                padding: 20px;
-            }
-
-            .title {
-                font-weight: 700;
-                margin: 0 0 5px;
-            }
-            .name {
-                margin: 0 0 10px;
-            }
-        }
-        &:after {
-            content: "";
-            display: inline-block;
-            width: 100%;
-        }
-        @include breakpoints(nav tablet) {
-            .profile-block {
-                width: 49%;
-                margin: 0 0 10px;
-                min-height: 305px;
-            }
-        }
-        @include breakpoints(mobile) {
-            .profile-block {
-                width: auto;
-                display: block;
-                margin: 0 0 10px;
-                min-height: 0;
-                text-align: left;
-            }
-            img {
-                float: left;
-                margin: 0 15px 0 0;
-            }
-        }
+    @include breakpoints(nav) {
+      .table-center::after {
+        width: 170px;
+      }
+      .logo {
+        right: 0;
+      }
     }
-
-    .resources {
-        > div {
-            display: inline-block;
-            margin: 15px 3px 0 0;
-            text-align: center;
-            vertical-align: top;
-            width: 100px;
+    @include breakpoints(mobile) {
+      .table-center {
+        display: block;
+        &::after {
+          display: none;
         }
-
-        @include breakpoints(mobile nav) {
-            text-align: center;
+        .cell {
+          display: block;
         }
-
-        @include breakpoints(mobile) {
-            > div {
-                width: 90px;
-            }
-        }
+      }
     }
+  }
+  .org-inner * {
+    box-sizing: content-box;
+  }
+}
+.profile-page {
+  img.profile-image {
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 45%;
+  }
+  h2 {
+    margin-top: 0;
+  }
 }
