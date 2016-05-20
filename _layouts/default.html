@@ -1,14 +1,22 @@
+---
+bannerName: Army Public Affairs
+bannerImage: /e2/images/rv7/org/logos/ocpa.png
+bannerImageAlt: U.S. Army Office of the Chief of Public Affairs
+bannerSocial:
+    - network: Facebook
+      link: https://www.facebook.com/ArmyOCPA/
+---
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <title>{% if page.pageTitle %}{{ page.pageTitle }}{% else %}{{ page.pageName }}{% endif %} | The United States Army</title>
+    <title>{% if page.pageTitle %}{{ page.pageTitle }}{% else %}{{ page.bannerName }}{% endif %} | The United States Army</title>
     <meta property="keywords" name="keywords" content="{{ page.pageKeywords }}"/>
     <meta property="description" name="description" content="{{ page.pageDesc }}"/>
-    <meta property="og:title" content="{{ page.pageName }} | The United States Army"/>
-    <meta property="og:site_name" content="{{ page.pageName }} | The United States Army"/>
-    <meta property="og:description" content="{{ page.pageName }} | The United States Army"/>
+    <meta property="og:title" content="{{ page.bannerName }} | The United States Army"/>
+    <meta property="og:site_name" content="{{ page.bannerName }} | The United States Army"/>
+    <meta property="og:description" content="{{ page.bannerName }} | The United States Army"/>
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://www.army.mil/publicaffairs{{ page.url }}">
     <link rel="canonical" href="http://www.army.mil/publicaffairs{{ page.url }}">

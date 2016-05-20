@@ -1,38 +1,38 @@
-<div class="page-banner {% if page.pageImage %}with-logo{% endif %}">
+<div class="page-banner {% if page.bannerImage %}with-logo{% endif %}">
     <div class="banner-container">
-        {% if page.pageImage %}
+        {% if page.bannerImage %}
         <div class="logo">
-            {% if page.basePath %}
-            <a href="{{ page.basePath }}"><img alt="{{ page.pageImageAlt }}" src="{{ page.pageImage }}"></a>
+            {% if page.bannerBasePath %}
+            <a href="{{ page.bannerBasePath }}"><img alt="{{ page.bannerImageAlt }}" src="{{ page.bannerImage }}"></a>
             {% else %}
-            <img alt="{{ page.pageImageAlt }}" src="{{ page.pageImage }}">
+            <img alt="{{ page.bannerImageAlt }}" src="{{ page.bannerImage }}">
             {% endif %}
         </div>
         {% endif %}
 
         <div class="banner-inner">
             <div class="left-container">
-                {% if page.basePath %}
-                <h1><a href="{{ page.basePath }}">{{ page.pageName }}</a></h1>
+                {% if page.bannerBasePath %}
+                <h1><a href="{{ page.bannerBasePath }}">{{ page.bannerName }}</a></h1>
                 {% else %}
-                <h1>{{ page.pageName }}</h1>
+                <h1>{{ page.bannerName }}</h1>
                 {% endif %}
                 
 
-                {% if page.pageSubName %}
-                <h2>{{ page.pageSubName }}</h2>
+                {% if page.bannerSubName %}
+                <h2>{{ page.bannerSubName }}</h2>
                 {% endif %}
 
                 <div class="max-width-container">
-                    {% if page.pageDescription %}
-                    <p>{{ page.pageDescription }}</p>
+                    {% if page.bannerDesc %}
+                    <p>{{ page.bannerDesc }}</p>
                     {% endif %}
 
-                    {% if page.socialLinks %}
+                    {% if page.bannerSocial %}
                     <ul class="social-links">
-                        {% for social in page.socialLinks %}
+                        {% for social in page.bannerSocial %}
                         <li class="social-button {{ social.network | downcase }}-button">
-                            <a title="{{ page.pageName }} on {{ social.network }}" href="{{ social.network }}">
+                            <a title="{{ page.bannerName }} on {{ social.network }}" href="{{ social.network }}">
                                 <span></span>
                             </a>
                         </li>
