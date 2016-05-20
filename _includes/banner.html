@@ -1,31 +1,44 @@
-<div class="org-banner">
-    <div class="container">
-        <div class="org-inner inner-container">
-            {% if page.pageImage %}
-            <div class="logo">
-                <span></span><img alt="{{ page.pageImageAlt }}" src="{{ page.pageImage }}">
-            </div>
+<div class="page-banner {% if page.pageImage %}with-logo{% endif %}">
+    <div class="banner-container">
+        {% if page.pageImage %}
+        <div class="logo">
+            {% if page.basePath %}
+            <a href="{{ page.basePath }}"><img alt="{{ page.pageImageAlt }}" src="{{ page.pageImage }}"></a>
+            {% else %}
+            <img alt="{{ page.pageImageAlt }}" src="{{ page.pageImage }}">
             {% endif %}
+        </div>
+        {% endif %}
 
-            <div class="table-center">
-                <div class="cell">
-                    <h1>{{ page.pageName }}</h1>
-                    <div class="left-container">
-                        {% if page.pageSubName %}
-                        <h2>{{ page.pageSubName }}</h2>
-                        {% endif %}
-                        {% if page.socialLinks %}
-                        <ul class="social-links">
-                            {% for social in page.socialLinks %}
-                            <li class="social-button {{ social.network | downcase }}-button">
-                                <a title="{{ page.pageName }} on {{ social.network }}" href="{{ social.network }}">
-                                    <span></span>
-                                </a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
+        <div class="banner-inner">
+            <div class="left-container">
+                {% if page.basePath %}
+                <h1><a href="{{ page.basePath }}">{{ page.pageName }}</a></h1>
+                {% else %}
+                <h1>{{ page.pageName }}</h1>
+                {% endif %}
+                
+
+                {% if page.pageSubName %}
+                <h2>{{ page.pageSubName }}</h2>
+                {% endif %}
+
+                <div class="max-width-container">
+                    {% if page.pageDescription %}
+                    <p>{{ page.pageDescription }}</p>
+                    {% endif %}
+
+                    {% if page.socialLinks %}
+                    <ul class="social-links">
+                        {% for social in page.socialLinks %}
+                        <li class="social-button {{ social.network | downcase }}-button">
+                            <a title="{{ page.pageName }} on {{ social.network }}" href="{{ social.network }}">
+                                <span></span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -23,10 +23,10 @@
 @import 'globals/modules/social';
 @import 'globals/modules/footer';
 @import 'globals/modules/home/menu';
-@import 'globals/modules/org/banner';
 @import 'project-mixins';
 @import 'grid-system';
 @import 'grid';
+@import 'banner';
 @import 'defaults';
 @import 'leader-blocks';
 // @import 'masthead';
@@ -53,10 +53,15 @@
     }
     .left-container {
       max-width: 10000px;
-      padding: 0;
+      padding-right: 0;
     }
     h1 {
-      padding: 0;
+      padding-right: 0;
+      a {
+        text-decoration: none;
+        color: map-get($army-branding, gold);
+        font-weight: 700;
+      }
     }
     .table-center {
       display: table;
@@ -93,7 +98,6 @@
           display: block;
         }
       }
-      h1 { padding: 15px 0 0; }
     }
   }
   .org-inner * {
@@ -105,5 +109,8 @@
     float: right;
     margin: 0 0 20px 20px;
     max-width: 45%;
+  }
+  h2 {
+    margin-top: 0;
   }
 }

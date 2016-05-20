@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <title>{{ page.pageName }} | The United States Army</title>
+    <title>{% if page.pageTitle %}{{ page.pageTitle }}{% else %}{{ page.pageName }}{% endif %} | The United States Army</title>
     <meta property="keywords" name="keywords" content="{{ page.pageKeywords }}"/>
     <meta property="description" name="description" content="{{ page.pageDesc }}"/>
     <meta property="og:title" content="{{ page.pageName }} | The United States Army"/>
@@ -19,7 +19,7 @@
     
     <div class="main">
         {% include banner.html %}
-        
+
         {{ content }}
     </div>
     

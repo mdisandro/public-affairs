@@ -33,6 +33,9 @@ h2 {
     margin-top: 50px;
   }
 }
+@include breakpoints(mobile nav tablet) {
+  h1, h2, h3, h4, h5, h6 { text-align: center; }
+}
 
 a {
   text-decoration: none;
