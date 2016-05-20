@@ -32,7 +32,7 @@
                     <ul class="social-links">
                         {% for social in page.bannerSocial %}
                         <li class="social-button {{ social.network | downcase }}-button">
-                            <a title="{{ page.bannerName }} on {{ social.network }}" href="{{ social.network }}">
+                            <a title="{{ page.bannerName }} on {{ social.network }}" href="{{ social.link }}">
                                 <span></span>
                             </a>
                         </li>
