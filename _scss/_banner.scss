@@ -1,5 +1,7 @@
-.page-banner {
+.page-banner * {
   @include box-sizing(border-box);
+}
+.page-banner {
   background-color: map-get($army-branding, armyblack);
   color: #fff;
   padding: 1px 0;
