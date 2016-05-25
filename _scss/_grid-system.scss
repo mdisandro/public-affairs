@@ -1,3 +1,9 @@
+$container: 1020px;
+$container-md: 740px;
+$container-sm: 670px;
+
+
+
 // Number of columns in the grid.
 $grid-columns: 12 !default;
 
@@ -38,6 +44,19 @@ $grid-gutter-width: 30px !default;
   width: percentage(($columns / $grid-columns));
 }
 
+// automatically adds a clear to the first element of each row
+// NOTE: must be set to specific breakpoints (if they overlap it will mess things up)
+@mixin span-clear($columns, $gutter: $grid-gutter-width)
+{
+  $numColumns: floor($grid-columns / $columns);
+  @include span($columns, $gutter: $grid-gutter-width);
+
+  // span-clear(4) -> nth-child(3n+4) or every 3rd starting at 4
+  &:nth-child(#{$numColumns}n+#{($numColumns + 1)}) {
+    clear: left;
+  }
+}
+
 @mixin offset($columns)
 {
   margin-left: percentage(($columns / $grid-columns));
@@ -58,3 +77,8 @@ $grid-gutter-width: 30px !default;
 @for $i from 1 through $grid-columns {
   .span#{$i} { @include span($i); }
 }
+
+
+
+
+

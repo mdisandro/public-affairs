@@ -11,8 +11,8 @@
 // ----------------------------------------------------------------------
 // Layout
 // ----------------------------------------------------------------------
-// @import 'grid-system';
-// @import 'grid';
+// @import 'globals/layout/grid-system';
+// @import 'globals/layout/grid';
 
 // ----------------------------------------------------------------------
 // globals/modules
@@ -24,93 +24,21 @@
 @import 'globals/modules/footer';
 @import 'globals/modules/home/menu';
 @import 'project-mixins';
-@import 'grid-system';
-@import 'grid';
-@import 'banner';
-@import 'defaults';
-@import 'leader-blocks';
-// @import 'masthead';
+@import 'grid-system'; // use global layout, when its ready
+@import 'grid'; // use global layout, when its ready
+@import 'page-banner'; // use global module, when its ready
+@import 'page-defaults'; // use global module, when its ready
+@import 'leader-blocks'; // use global module, when its ready
 @import 'simple-links-list'; // use global module, when its ready
 
 
 // ----------------------------------------------------------------------
 // local style
 // ----------------------------------------------------------------------
-.org-banner .container {
-  margin: 0 auto;
-  .org-inner {
-    position: relative;
-    h2 {
-      text-align: left;
-      margin: 0;
-      &:after {
-        content: none;
-      }
-
-      @include breakpoints(mobile) {
-        text-align: center;
-      }
-    }
-    .left-container {
-      max-width: 10000px;
-      padding-right: 0;
-    }
-    h1 {
-      padding-right: 0;
-      a {
-        text-decoration: none;
-        color: map-get($army-branding, gold);
-        font-weight: 700;
-      }
-    }
-    .table-center {
-      display: table;
-      width: 100%;
-
-      &::after {
-        display: table-cell;
-        width: 250px;
-        height: 150px;
-        content: "";
-      }
-
-      .cell {
-        vertical-align: middle;
-        display: table-cell;
-      }
-    }
-
-    @include breakpoints(nav) {
-      .table-center::after {
-        width: 170px;
-      }
-      .logo {
-        right: 0;
-      }
-    }
-    @include breakpoints(mobile) {
-      .table-center {
-        display: block;
-        &::after {
-          display: none;
-        }
-        .cell {
-          display: block;
-        }
-      }
-    }
-  }
-  .org-inner * {
-    box-sizing: content-box;
-  }
-}
 .profile-page {
   img.profile-image {
     float: right;
     margin: 0 0 20px 20px;
     max-width: 45%;
-  }
-  h2 {
-    margin-top: 0;
   }
 }

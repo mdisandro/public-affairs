@@ -1,13 +1,10 @@
-$container: 1020px;
-$container-md: 740px;
-$container-sm: 670px;
 
-// need this!
-// include everything under main since border box messes up the header a bit :P
-.main *
-{
-  @include box-sizing(border-box);
-}
+
+//*,
+//*:after,
+//*:before {
+//  @include box-sizing(border-box);
+//}
 
 .container {
   @include container-fixed();
@@ -35,7 +32,6 @@ $container-sm: 670px;
   // 480 - 699
   @include breakpoints(nav mobile) {
     margin: 50px auto;
-//    max-width: 446px;
   }
   
   // 480 - 768
@@ -43,3 +39,14 @@ $container-sm: 670px;
     .inner-container { padding: 0; }
   }
 }
+
+// let the container define the top margin, not the first heading
+.container .inner-container {
+  @for $i from 1 through 6 {
+    > h#{$i}:first-child,
+    > *:first-child > h#{$i}:first-child {
+      margin-top: 0;
+    }
+  }
+}
+

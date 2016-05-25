@@ -32,16 +32,18 @@
     padding: 0.4em 0 0.8em;
   }
 
-  .banner-container {
-    @include container-fixed();
+  .container {
+    // @include container-fixed();
+    // margin: 0 auto;
+    // max-width: $container;
+    // overflow: hidden;
+    // position: relative;
     margin: 0 auto;
-    max-width: $container;
-    overflow: hidden;
     position: relative;
     
-    .banner-inner {
+    .inner-container {
       margin: 35px auto;
-      padding: 0 15px;
+      // padding: 0 15px;
       display: table;
       width: 100%;
 
@@ -107,7 +109,7 @@
         bottom: 20px;
       }
 
-      .banner-inner .left-container {
+      .inner-container .left-container {
         height: 95px;
       }
     }
@@ -122,12 +124,8 @@
         right: 15px;
       }
 
-      .banner-inner {
-        padding: 0;
-
-        .left-container {
-          height: 95px;
-        }
+      .inner-container .left-container {
+        height: 95px;
       }
     }
 
@@ -146,10 +144,10 @@
         }
       }
 
-      .banner-inner {
+      .inner-container {
         display: block;
         width: auto;
-        padding: 0;
+        // padding: 0;
 
         .left-container {
           display: block;
@@ -173,7 +171,7 @@
   }
 
   &.with-logo {
-    .banner-inner .left-container {
+    .inner-container .left-container {
       padding-right: 250px;
 
       @include breakpoints(mobile nav) {

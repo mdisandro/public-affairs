@@ -1,3 +1,6 @@
+.main * {
+  @include box-sizing(border-box);
+}
 .main {
   h2 {
     font: 700 1.5em/1.25em $font-family;
@@ -12,6 +15,10 @@
       height: 5px;
       margin: 20px 0 0;
       width: 60px;
+    }
+
+    &.subhead {
+      margin-top: 0;
     }
 
     @include breakpoints(mobile nav tablet) {
@@ -47,26 +54,17 @@
     }
   }
 
+  ul,
   p {
-    margin: 0 0 1em;
+    line-height: 1.625em;
+    margin-bottom: 1.25em;
+
     &:last-child {
-      margin: 0;
+      margin-bottom: 0;
     }
   }
-}
 
-.container *,
-.container *:after,
-.container *:before {
-  @include box-sizing(border-box);
-}
-
-// container section creates top margin, not headings
-.container .inner-container > h1:first-child,
-.container .inner-container > h2:first-child,
-.container .inner-container > h3:first-child,
-.container .inner-container > h4:first-child,
-.container .inner-container > h5:first-child,
-.container .inner-container > h6:first-child {
-    margin-top: 0;
+  strong {
+    font-weight: 700;
+  }
 }
