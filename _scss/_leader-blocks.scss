@@ -1,8 +1,6 @@
 .leader-blocks {
   overflow: hidden;
 
-  h4 { color: map-get($army-branding, white); }
-
   ul {
     @include row(true);
 

@@ -1,36 +1,28 @@
 // ----------------------------------------------------------------------
-// globals/base
+// Base
 // ----------------------------------------------------------------------
-@import 'globals/base/variables';
-@import 'globals/base/mixins';
-@import 'globals/base/extends';
-@import 'globals/base/reset';
-@import 'globals/base/fonts';
-@import 'globals/base/images';
+@import "globals/base";
 
 // ----------------------------------------------------------------------
 // Layout
 // ----------------------------------------------------------------------
-// @import 'globals/layout/grid-system';
-// @import 'globals/layout/grid';
+@import "globals/layout";
 
 // ----------------------------------------------------------------------
-// globals/modules
+// Modules
 // ----------------------------------------------------------------------
-@import 'globals/modules/buttons';
-@import 'globals/modules/header';
-@import 'globals/modules/sub-header';
-@import 'globals/modules/social';
-@import 'globals/modules/footer';
-@import 'globals/modules/home/menu';
-@import 'project-mixins';
-@import 'grid-system'; // use global layout, when its ready
-@import 'grid'; // use global layout, when its ready
-@import 'page-banner'; // use global module, when its ready
-@import 'page-defaults'; // use global module, when its ready
-@import 'leader-blocks'; // use global module, when its ready
-@import 'simple-links-list'; // use global module, when its ready
+@import "globals/elements/buttons";
+@import "globals/elements/header";
+@import "globals/elements/social";
+@import "globals/elements/footer";
+@import "globals/elements/nav";
+@import 'globals/elements/lists';
 
+// ----------------------------------------------------------------------
+// project scss
+// ----------------------------------------------------------------------
+@import 'page-banner';
+@import 'leader-blocks';
 
 // ----------------------------------------------------------------------
 // local style

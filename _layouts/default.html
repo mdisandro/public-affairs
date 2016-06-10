@@ -25,16 +25,15 @@ bannerSocial:
     <link rel="stylesheet" href="/e2/css/rv7/publicaffairs/style.css">
 </head>
 <body id="{{ page.active }}" class="{{ page.id }}">
-    {% include globals/header.blade.php %}
+    {% include globals/elements/header.html %}
     
-        {% include banner.html %}
+    {% include banner.html %}
 
     <div class="main">
         {{ content }}
     </div>
     
-    {% include globals/social.blade.php %}
-    {% include globals/footer.blade.php %}
+    {% include globals/elements/footer.html %}
     
     <script type="text/javascript" src="/e2/js/rv7/publicaffairs/main.min.js"></script>
 </body>

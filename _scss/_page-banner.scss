@@ -1,29 +1,17 @@
-.page-banner * {
-  @include box-sizing(border-box);
-}
+
 .page-banner {
   background-color: map-get($army-branding, armyblack);
   color: #fff;
   padding: 1px 0;
 
-  h1 {
+  h2 {
     color: map-get($army-branding, gold);
-    font: 700 2.25em/1.125em $font-family;
-    text-transform: uppercase;
-    text-align: left;
     padding-bottom: 3px;
 
     a {
       text-decoration: none;
       color: map-get($army-branding, gold);
       font-weight: 700;
-    }
-  }
-  h2 {
-    text-align: left;
-    margin: 0;
-    &:after {
-      content: none;
     }
   }
 
@@ -33,11 +21,6 @@
   }
 
   .container {
-    // @include container-fixed();
-    // margin: 0 auto;
-    // max-width: $container;
-    // overflow: hidden;
-    // position: relative;
     margin: 0 auto;
     position: relative;
     
@@ -160,13 +143,7 @@
         }
       }
 
-      h1 {
-        padding-top: 15px;
-        text-align: center;
-      }
-      h2 {
-        text-align: center;
-      }
+      h2 { padding-top: 15px; }
     }
   }
 

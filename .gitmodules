@@ -1,0 +1,3 @@
+[submodule "armydotmil.github.io"]
+	path = armydotmil.github.io
+	url = https://github.com/armydotmil/armydotmil.github.io.git

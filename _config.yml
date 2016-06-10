@@ -2,7 +2,7 @@
 #env: production
 env: dev
 
-exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'sftpCache.json', 'node_modules', 'us-army-homepage']
+exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'sftpCache.json', 'node_modules', 'armydotmil.github.io']
 
 gems:
   - octopress-minify-html

@@ -13,14 +13,9 @@
         <div class="inner-container">
             <div class="left-container">
                 {% if page.bannerBasePath %}
-                <h1><a href="{{ page.bannerBasePath }}">{{ page.bannerHeading }}</a></h1>
+                <h2><a href="{{ page.bannerBasePath }}">{{ page.bannerHeading }}</a></h2>
                 {% else %}
-                <h1>{{ page.bannerHeading }}</h1>
-                {% endif %}
-                
-
-                {% if page.bannerSubHeading %}
-                <h2>{{ page.bannerSubHeading }}</h2>
+                <h2>{{ page.bannerHeading }}</h2>
                 {% endif %}
 
                 <div class="max-width-container">
