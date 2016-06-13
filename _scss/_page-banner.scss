@@ -3,6 +3,8 @@
   background-color: map-get($army-branding, armyblack);
   color: #fff;
   padding: 1px 0;
+  position: relative;
+  z-index: 1;
 
   h2 {
     color: map-get($army-branding, gold);
