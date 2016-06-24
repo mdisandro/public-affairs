@@ -1,6 +1,6 @@
 # setting env to production will minify the html
-#env: production
-env: dev
+env: production
+#env: dev
 
 exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'sftpCache.json', 'node_modules', 'armydotmil.github.io']
 
