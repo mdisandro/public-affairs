@@ -1,26 +1,26 @@
-<div class="page-banner {% if page.bannerLogo %}with-logo{% endif %}">
+<div class="page-banner {% if layout.bannerLogo %}with-logo{% endif %}">
     <div class="container">
-        {% if page.bannerLogo %}
+        {% if layout.bannerLogo %}
         <div class="logo">
-            {% if page.bannerBasePath %}
-            <a href="{{ page.bannerBasePath }}"><img alt="{{ page.bannerLogoAlt }}" src="{{ page.bannerLogo }}"></a>
+            {% if layout.bannerBasePath %}
+            <a href="{{ layout.bannerBasePath }}"><img alt="{{ layout.bannerLogoAlt }}" src="{{ layout.bannerLogo }}"></a>
             {% else %}
-            <img alt="{{ page.bannerLogoAlt }}" src="{{ page.bannerLogo }}">
+            <img alt="{{ layout.bannerLogoAlt }}" src="{{ layout.bannerLogo }}">
             {% endif %}
         </div>
         {% endif %}
 
         <div class="inner-container">
             <div class="left-container">
-                {% if page.bannerBasePath %}
-                <h2><a href="{{ page.bannerBasePath }}">{{ page.bannerHeading }}</a></h2>
+                {% if layout.bannerBasePath %}
+                <h2><a href="{{ layout.bannerBasePath }}">{{ layout.bannerHeading }}</a></h2>
                 {% else %}
-                <h2>{{ page.bannerHeading }}</h2>
+                <h2>{{ layout.bannerHeading }}</h2>
                 {% endif %}
 
                 <div class="max-width-container">
-                    {% if page.bannerDesc %}
-                    <p>{{ page.bannerDesc }}</p>
+                    {% if layout.bannerDesc %}
+                    <p>{{ layout.bannerDesc }}</p>
                     {% endif %}
 
                     {% if page.bannerSocial %}
