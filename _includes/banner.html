@@ -23,11 +23,11 @@
                     <p>{{ layout.bannerDesc }}</p>
                     {% endif %}
 
-                    {% if page.bannerSocial %}
+                    {% if layout.bannerSocial %}
                     <ul class="social-links">
-                        {% for social in page.bannerSocial %}
+                        {% for social in layout.bannerSocial %}
                         <li class="social-button {{ social.network }}-button">
-                            <a title="{{ page.bannerHeading }} on {{ social.title }}" href="{{ social.link }}">
+                            <a title="{{ layout.bannerHeading }} on {{ social.title }}" href="{{ social.link }}">
                                 <span></span>
                             </a>
                         </li>
