@@ -6,7 +6,7 @@
 
     li {
       @include span(3);
-      @include img-grayscale-hover('a');
+      @include img-grayscale-hover('a', '.image');
       color: map-get($army-branding, white);
       text-align: center;
 
@@ -20,9 +20,12 @@
       }
     
       .image {
-        @include row();
+        display: block;
+        margin: auto;
+        overflow: hidden;
         padding: 100% 0 0;
         position: relative;
+        width: 88%;
 
         img {
           bottom: auto;
@@ -79,7 +82,10 @@
       }
     }
     @include breakpoints(lg_tablet tablet nav mobile) {
-      li .image { padding: 75% 0 0; }
+      li .image {
+        padding: 88% 0 0;
+        width: 74%;
+      }
     }
   }
 
