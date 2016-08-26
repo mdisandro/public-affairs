@@ -33,7 +33,7 @@ profiles:
             <ul>
                 {% for profile in page.profiles %}
                 <li>
-                    <a href="{{ profile.link }}/" title="visit the {{ profile.title }}'{{ profile.add_s }} profile">
+                    <a href="{{ profile.link }}/" title="Visit the {{ profile.title }}'{{ profile.add_s }} profile">
                         <span class="image"><img src="/e2/images/rv7/publicaffairs/{{ profile.img }}.jpg" alt="{{ profile.title }}" /></span>
                         <span class="title">{{ profile.title }}</span>
                         <span class="name">{% if profile.rank %}{{ profile.rank }}<br />{% endif %}{{ profile.name }}</span>
