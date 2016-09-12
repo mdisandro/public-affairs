@@ -12,16 +12,17 @@
 // Modules
 // ----------------------------------------------------------------------
 @import "globals/elements/buttons";
-@import "globals/elements/header";
-@import "globals/elements/social";
 @import "globals/elements/footer";
-@import "globals/elements/nav";
+@import "globals/elements/header";
 @import 'globals/elements/lists';
+@import "globals/elements/nav";
+@import 'globals/elements/page-banner';
+@import 'globals/elements/parallax-image';
+@import "globals/elements/social";
 
 // ----------------------------------------------------------------------
 // project scss
 // ----------------------------------------------------------------------
-@import 'page-banner';
 @import 'leader-blocks';
 
 // ----------------------------------------------------------------------

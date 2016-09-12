@@ -100,7 +100,8 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: [
-                        '_js/bundled/header.js'
+                        '_js/bundled/header.js',
+                        '_js/bundled/publicaffairs.js'
                     ],
                     dest: 'e2/js/rv7/<%= pkg.name %>/main.min.js'
                 }]
