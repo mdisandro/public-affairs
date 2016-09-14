@@ -1,7 +1,10 @@
-/*global window,require*/
+/*global document, require*/
+var ParallaxImg = require('./globals/modules/ParallaxImage');
 
 (function() {
     'use strict';
-    // do stuff here...
-    // alert('hello world');
-})();
+    var header = document.getElementsByClassName('navbar'),
+        headerHeight = (header.length) ? header[0].clientHeight : 0;
+
+    new ParallaxImg(headerHeight);
+}());

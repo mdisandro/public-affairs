@@ -1,40 +1,18 @@
-<div class="page-banner {% if layout.bannerLogo %}with-logo{% endif %}">
+<div class="page-banner parallax-image standard">
+    <div class="full-width-image">
+        <div class="overlay-effect"></div>
+        <img src="https://www.army.mil/e2/images/rv7/banners/public%20affairs/1600.jpg" srcset="https://www.army.mil/e2/images/rv7/banners/public%20affairs/2500.jpg 2500w, https://www.army.mil/e2/images/rv7/banners/public%20affairs/1600.jpg 1600w, https://www.army.mil/e2/images/rv7/banners/public%20affairs/768.jpg 768w">
+    </div>
     <div class="container">
-        {% if layout.bannerLogo %}
-        <div class="logo">
-            {% if layout.bannerBasePath %}
-            <a href="{{ layout.bannerBasePath }}"><img alt="{{ layout.bannerLogoAlt }}" src="{{ layout.bannerLogo }}"></a>
-            {% else %}
-            <img alt="{{ layout.bannerLogoAlt }}" src="{{ layout.bannerLogo }}">
-            {% endif %}
-        </div>
-        {% endif %}
-
         <div class="inner-container">
             <div class="left-container">
                 {% if layout.bannerBasePath %}
-                <h2><a href="{{ layout.bannerBasePath }}">{{ layout.bannerHeading }}</a></h2>
+                <h1><a href="{{ layout.bannerBasePath }}">Army Public Affairs</a></h1>
+                <h2><a href="{{ layout.bannerBasePath }}">Telling the Army Story</a></h2>
                 {% else %}
-                <h2>{{ layout.bannerHeading }}</h2>
+                <h1>Army Public Affairs</h1>
+                <h2>Telling the Army Story</h2>
                 {% endif %}
-
-                <div class="max-width-container">
-                    {% if layout.bannerDesc %}
-                    <p>{{ layout.bannerDesc }}</p>
-                    {% endif %}
-
-                    {% if page.bannerSocial %}
-                    <ul class="social-links">
-                        {% for social in page.bannerSocial %}
-                        <li class="social-button {{ social.network }}-button">
-                            <a title="{{ page.bannerHeading }} on {{ social.title }}" href="{{ social.link }}">
-                                <span></span>
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </div>
             </div>
         </div>
     </div>
