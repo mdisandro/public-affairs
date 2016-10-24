@@ -6,13 +6,12 @@ var Header = require('./modules/Header');
 var ScrollNav = require('./modules/ScrollNav');
 
 (function () {
-   'use strict';
+    'use strict';
 
-   var navbar = document.getElementsByClassName('navbar')[0].parentNode;
-   new Header('menu');
-   new Header('search');
-   Header.addSubmenu();
-   new ScrollNav(navbar, 150);
+    var navbar = document.getElementsByClassName('navbar')[0].parentNode;
+    new Header('menu');
+    new Header('search');
+    new ScrollNav(navbar, 150);
 })();
 
 },{"./modules/Header":2,"./modules/ScrollNav":4}],2:[function(require,module,exports){
@@ -67,24 +66,6 @@ var Header = function () {
                     Helper.addClass(html, 'menu-open');
                     Helper.addClass(body, 'menu-open');
                 }
-            }
-        }
-    }], [{
-        key: 'addSubmenu',
-        value: function addSubmenu() {
-            var items = document.getElementsByClassName('menu-item'),
-                i = 0,
-                lastClass,
-                li;
-            for (i; i < items.length; i++) {
-                // function is inside loop because it would not work outside
-                // -- you need to add the event listener to each menu item
-                items[i].addEventListener('click', function () {
-                    // a click on the span shouldn't register since we only add the event listener to the anchors
-                    li = this.parentNode;
-                    lastClass = Helper.hasClass(li, 'social') ? 'social ' : '';
-                    li.className = !Helper.hasClass(li, 'expanded') ? lastClass + 'expanded' : lastClass;
-                }, false);
             }
         }
     }]);
