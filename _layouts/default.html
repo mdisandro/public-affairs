@@ -27,10 +27,9 @@ bannerSocial:
 <body id="{{ page.active }}" class="{{ page.id }}">
     {% include globals/elements/upgrade.html %}
     {% include globals/elements/header.html %}
-    
-    {% include banner.html %}
 
     <div class="main">
+        {% include banner.html %}
         {{ content }}
     </div>
     
