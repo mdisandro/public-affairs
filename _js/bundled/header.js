@@ -40,6 +40,15 @@ var Header = function () {
         this.navbtns = document.getElementsByClassName('nav-button');
         this.navwins = document.getElementsByClassName('nav-window');
         this.sectionBtn.addEventListener('click', this.toggleNavOption.bind(this), false);
+
+        // uncheck boxes on refresh
+        var checkboxes = this.headerElem.querySelectorAll('input[type=checkbox]:checked'),
+            i = 0,
+            len;
+
+        for (i, len = checkboxes.length; i < len; i++) {
+            checkboxes[i].checked = false;
+        }
     }
 
     _createClass(Header, [{
