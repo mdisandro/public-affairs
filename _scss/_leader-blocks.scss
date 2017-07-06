@@ -5,7 +5,8 @@
     @include row(true);
 
     li {
-      @include span(3);
+      // SHOULD BE REVERTED TO span(3) when new profile added
+      @include span(4);
       @include img-grayscale-hover('a', '.image');
       color: map-get($army-branding, white);
       text-align: center;
