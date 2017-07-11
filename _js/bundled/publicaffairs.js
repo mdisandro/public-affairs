@@ -25,7 +25,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /*jshint -W032 */ /* ignore unnecessary semicolon */
-
 var Helper = function () {
     function Helper() {
         _classCallCheck(this, Helper);
@@ -87,7 +86,6 @@ var FullWidthParallax = function () {
      * Creates FullWidthParallax object
      * @param {obj} elem - parallax container object
      */
-
     function FullWidthParallax(elem, topMargin) {
         _classCallCheck(this, FullWidthParallax);
 
@@ -159,9 +157,9 @@ var FullWidthParallax = function () {
                 this.runOnScroll();
                 // if mobile size reset image to top
             } else if (this.topVal !== this.centered && this.contH > 0) {
-                    this.img.style.top = this.centered + 'px';
-                    this.topVal = this.centered;
-                }
+                this.img.style.top = this.centered + 'px';
+                this.topVal = this.centered;
+            }
         }
 
         /*
@@ -222,7 +220,6 @@ var ParallaxImage = function () {
      * Creates FullWidthParallax object(s)
      * @param {int} topMargin - margin to top of full width image object
      */
-
     function ParallaxImage(topMargin) {
         _classCallCheck(this, ParallaxImage);
 

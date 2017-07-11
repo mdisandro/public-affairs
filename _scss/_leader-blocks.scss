@@ -18,36 +18,37 @@
         &:hover {
           text-decoration: none;
         }
-      }
-    
-      .image {
-        display: block;
-        margin: auto;
-        overflow: hidden;
-        padding: 100% 0 0;
-        position: relative;
-        width: 88%;
-
-        img {
-          bottom: auto;
-          top: -10px;
-          left: 0;
-          right: 0;
-          width: auto;
-          max-width: 100%;
+        .image {
+          display: block;
+          margin: auto;
+          overflow: hidden;
+          padding: 100% 0 0;
+          position: relative;
+          width: 74%;
+          &:before {
+            height: 89%;
+          }
+          img {
+            bottom: auto;
+            top: -10px;
+            left: 0;
+            right: 0;
+            width: auto;
+            max-width: 100%;
+          }
         }
-      }
     
-      .title {
-        font: 400 .875em $font-family;
-        margin: 17px 0 0;
-        text-transform: uppercase;
-        display: block;
-      }
+        .title {
+          font: 400 .875em $font-family;
+          margin: 17px 0 0;
+          text-transform: uppercase;
+          display: block;
+        }
 
-      .name {
-        font: 700 1.25em $font-family;
-        display: block;
+        .name {
+          font: 700 1.25em $font-family;
+          display: block;
+        }
       }
     }
   }
