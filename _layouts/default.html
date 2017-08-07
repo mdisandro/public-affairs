@@ -9,7 +9,7 @@ bannerSocial:
       link: https://www.facebook.com/ArmyOCPA/
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -27,10 +27,9 @@ bannerSocial:
 <body id="{{ page.active }}" class="{{ page.id }}">
     {% include globals/elements/upgrade.html %}
     {% include globals/elements/header.html %}
-    
-    {% include banner.html %}
 
     <div class="main">
+        {% include banner.html %}
         {{ content }}
     </div>
     
