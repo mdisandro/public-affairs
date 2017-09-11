@@ -2,12 +2,10 @@
 // Base
 // ----------------------------------------------------------------------
 @import "globals/base";
-
 // ----------------------------------------------------------------------
 // Layout
 // ----------------------------------------------------------------------
 @import "globals/layout";
-
 // ----------------------------------------------------------------------
 // Modules
 // ----------------------------------------------------------------------
@@ -19,56 +17,79 @@
 @import 'globals/elements/page-banner';
 @import 'globals/elements/parallax-image';
 @import "globals/elements/social";
-
 // ----------------------------------------------------------------------
 // project scss
 // ----------------------------------------------------------------------
 @import 'leader-blocks';
-
 // ----------------------------------------------------------------------
 // local style
 // ----------------------------------------------------------------------
 .profile-page {
-    .profile{
+    .paragraph {
+        max-width: 75%;
+    }
+    @include breakpoints(mobile nav) {
+        .paragraph {
+            max-width: 100%;
+        }
+    }
+    .profile-responsive {
         max-width: 200px;
         float: right;
-            margin-left: 20px;
-            margin-bottom: 20px;
-        .btn{
+        margin-left: 20px;
+        margin-bottom: 20px;
+        .profile-image-responsive-460 {
+            display: none;
+        }
+        .btn {
             margin-bottom: 10px;
         }
-        .btn > div{
-            width:100%;
-            
+        .btn>div {
+            width: 100%;
         }
-        
-        .profile-social-media { 
-                width: 100%;
-                height: 49px;
-                ul{
-                    margin: 0 auto;
-                    width: 110px;
-                }
-                li{
-                    &:last-of-type {
-                        margin-left: 10px;
-                    }
-                    display:inline-block;
-                }
+        .profile-social-media {
+            width: 100%;
+            height: 49px;
+            ul {
+                margin: 0 auto;
+                width: 110px;
             }
-            .social-button{
-                display: inline-block;
-                background-color:#000;
-                padding: 12px 0;
+            li {
+                &:last-of-type {
+                    margin-left: 10px;
+                }
+                display:inline-block;
+            }
+        }
+        .social-button {
+            display: inline-block;
+            background-color: #000;
+            padding: 12px 0;
+            width: 50px;
+            height: 49px;
+            text-align: center;
+            a {
                 width: 50px;
-                height: 49px;
-                text-align: center;
-                
-                a { 
-                    width: 50px;
-                    height: 50px;
-                    display: block;}
-                
+                height: 50px;
+                display: block;
             }
+        }
+        @include breakpoints(mobile nav) {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 460px;
+            .btn {
+                display: none;
+            }
+            .profile-image-responsive-460 {
+                display: block;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .profile-image-responsive {
+                display: none;
+            }
+        }
     }
 }
