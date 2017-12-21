@@ -6,7 +6,7 @@ exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'sftpCache.json', 'node_m
 
 gems:
   - octopress-minify-html
-  - jekyll-autoprefixer
+  - octopress-autoprefixer
 
 sass:
   sass_dir: _scss
