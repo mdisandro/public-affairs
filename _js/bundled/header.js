@@ -101,6 +101,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /*jshint -W032 */ /* ignore unnecessary semicolon */
+
 var Helper = function () {
     function Helper() {
         _classCallCheck(this, Helper);
@@ -128,6 +129,11 @@ var Helper = function () {
         key: 'toggleClass',
         value: function toggleClass(el, className) {
             if (this.hasClass(el, className)) this.removeClass(el, className);else this.addClass(el, className);
+        }
+    }, {
+        key: 'randomNumberToken',
+        value: function randomNumberToken() {
+            return new Date().valueOf();
         }
     }]);
 
@@ -163,6 +169,7 @@ var ScrollNav = function () {
      * minTop {int}         - minimum px distance from top of page to start
                               adding scroll class
      */
+
     function ScrollNav(elem, minTop) {
         _classCallCheck(this, ScrollNav);
 
@@ -188,9 +195,9 @@ var ScrollNav = function () {
                     this.scrollPos = newPos;
                     // scrolling up
                 } else if (this.scrollPos - this.minScroll >= newPos) {
-                    Helper.removeClass(this.navElem, 'scrolled-down');
-                    this.scrollPos = newPos;
-                }
+                        Helper.removeClass(this.navElem, 'scrolled-down');
+                        this.scrollPos = newPos;
+                    }
             }
         }
     }]);

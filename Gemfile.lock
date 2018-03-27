@@ -9,6 +9,7 @@ GEM
     css_press (0.3.2)
       csspool-st (= 3.1.2)
       json
+    cssminify2 (2.0.1)
     csspool-st (3.1.2)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -17,6 +18,7 @@ GEM
       htmlentities
       multi_css (>= 0.1.0)
       multi_js (>= 0.1.0)
+    htmlcompressor (0.4.0)
     htmlentities (4.3.4)
     jekyll (3.5.0)
       addressable (~> 2.4)
@@ -29,6 +31,11 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-minifier (0.1.2)
+      cssminify2 (~> 2.0)
+      htmlcompressor (~> 0.3)
+      jekyll (~> 3.0)
+      uglifier (~> 2.7)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
@@ -71,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-minifier (= 0.1.2)
   octopress-autoprefixer
   octopress-minify-html
 
