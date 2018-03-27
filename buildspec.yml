@@ -30,7 +30,7 @@ phases:
         - echo "******** Run Post Task ********"
         - grunt post-production
         - echo "******** Uploading to S3 ********"
-        - aws s3 sync _site/ s3://$S3_BUCKET_0/publicaffairs --exclude "e2/*"
+        - aws s3 sync _site/ s3://$S3_BUCKET_0/info/institution/publicaffairs --exclude "e2/*"
         - aws s3 sync _site/e2/js/rv7/publicaffairs s3://$S3_BUCKET_0/e2/js/rv7/publicaffairs
         - aws s3 sync _site/e2/css/rv7/publicaffairs s3://$S3_BUCKET_0/e2/css/rv7/publicaffairs
         - echo "******** CHANGE BRANCH ********"
@@ -46,6 +46,6 @@ phases:
         - echo "******** Run Post Task ********"
         - grunt post-production
         - echo "******** Uploading to S3 ********"
-        - aws s3 sync _site/ s3://$S3_BUCKET_1/publicaffairs --exclude "e2/*"
+        - aws s3 sync _site/ s3://$S3_BUCKET_1/info/institution/publicaffairs --exclude "e2/*"
         - aws s3 sync _site/e2/js/rv7/publicaffairs s3://$S3_BUCKET_1/e2/js/rv7/publicaffairs
         - aws s3 sync _site/e2/css/rv7/publicaffairs s3://$S3_BUCKET_1/e2/css/rv7/publicaffairs
