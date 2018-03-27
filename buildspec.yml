@@ -13,22 +13,39 @@ phases:
         - npm install -g grunt-cli
   build:
     commands:
-        - echo "******** CHANGE BRANCH ********"
-        - git checkout $GIT_BRANCH
-        - echo "******** UPDATE SUBMODULE ********"
-        - git submodule init
-        - git submodule update
-        - echo "******** Run Grunt Task ********"
-        - grunt sass
-        - grunt browserify
-        - grunt uglify
-        - echo "******** Building Jekyll site ********"
         - export LC_ALL=en_US.UTF-8
         - export LC_TYPE=en_US.UTF-8
         - export LANGUAGE=en_US.UTF-8
         - export LANG=en_US.UTF-8
+        - echo "******** CHANGE BRANCH ********"
+        - git checkout $GIT_BRANCH_0
+        - echo "******** UPDATE SUBMODULE ********"
+        - git submodule init
+        - git submodule update
+        - git submodule foreach git pull origin master
+        - echo "******** Run Pre Task ********"
+        - grunt production
+        - echo "******** Building Jekyll site ********"
         - jekyll build -t
+        - echo "******** Run Post Task ********"
+        - grunt post-production
         - echo "******** Uploading to S3 ********"
-        - aws s3 sync _site/ s3://$S3_BUCKET/publicaffairs --exclude "e2/*"
-        - aws s3 sync _site/e2/js/rv7/publicaffairs s3://$S3_BUCKET/e2/js/rv7/publicaffairs
-        - aws s3 sync _site/e2/css/rv7/publicaffairs s3://$S3_BUCKET/e2/css/rv7/publicaffairs
+        - aws s3 sync _site/ s3://$S3_BUCKET_0/publicaffairs --exclude "e2/*"
+        - aws s3 sync _site/e2/js/rv7/publicaffairs s3://$S3_BUCKET_0/e2/js/rv7/publicaffairs
+        - aws s3 sync _site/e2/css/rv7/publicaffairs s3://$S3_BUCKET_0/e2/css/rv7/publicaffairs
+        - echo "******** CHANGE BRANCH ********"
+        - git checkout $GIT_BRANCH_1
+        - echo "******** UPDATE SUBMODULE ********"
+        - git submodule init
+        - git submodule update
+        - git submodule foreach git pull origin master
+        - echo "******** Run Grunt Task ********"
+        - grunt production
+        - echo "******** Building Jekyll site ********"
+        - jekyll build -t
+        - echo "******** Run Post Task ********"
+        - grunt post-production
+        - echo "******** Uploading to S3 ********"
+        - aws s3 sync _site/ s3://$S3_BUCKET_1/publicaffairs --exclude "e2/*"
+        - aws s3 sync _site/e2/js/rv7/publicaffairs s3://$S3_BUCKET_1/e2/js/rv7/publicaffairs
+        - aws s3 sync _site/e2/css/rv7/publicaffairs s3://$S3_BUCKET_1/e2/css/rv7/publicaffairs

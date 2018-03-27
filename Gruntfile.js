@@ -13,15 +13,116 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        sass: {
-            dist: {
+        critical: {
+            index: {
                 options: {
-                    style: 'compressed',
-                    loadPath: '_scss/globals/'
+                    inline: true,
+                    minify: true,
+                    base: './',
+                    css: [
+                        '_site/e2/css/rv7/publicaffairs/style.css'
+                    ],
+                    dimensions: [{
+                        height: 768,
+                        width: 1366
+                    }, {
+                        height: 640,
+                        width: 360
+                    }, {
+                        height: 568,
+                        width: 320
+                    }]
                 },
-                files: {
-                    'e2/css/rv7/publicaffairs/style.css': '_scss/style.scss'
-                }
+                src: './_site/index.html',
+                dest: './_site/index.html'
+            },
+            sgm: {
+                options: {
+                    inline: true,
+                    minify: true,
+                    base: './',
+                    css: [
+                        '_site/e2/css/rv7/publicaffairs/style.css'
+                    ],
+                    dimensions: [{
+                        height: 768,
+                        width: 1366
+                    }, {
+                        height: 640,
+                        width: 360
+                    }, {
+                        height: 568,
+                        width: 320
+                    }]
+                },
+                src: './_site/sgm/index.html',
+                dest: './_site/sgm/index.html'
+            },
+            principaldeputy: {
+                options: {
+                    inline: true,
+                    minify: true,
+                    base: './',
+                    css: [
+                        '_site/e2/css/rv7/publicaffairs/style.css'
+                    ],
+                    dimensions: [{
+                        height: 768,
+                        width: 1366
+                    }, {
+                        height: 640,
+                        width: 360
+                    }, {
+                        height: 568,
+                        width: 320
+                    }]
+                },
+                src: './_site/principaldeputy/index.html',
+                dest: './_site/principaldeputy/index.html'
+            },
+            deputy: {
+                options: {
+                    inline: true,
+                    minify: true,
+                    base: './',
+                    css: [
+                        '_site/e2/css/rv7/publicaffairs/style.css'
+                    ],
+                    dimensions: [{
+                        height: 768,
+                        width: 1366
+                    }, {
+                        height: 640,
+                        width: 360
+                    }, {
+                        height: 568,
+                        width: 320
+                    }]
+                },
+                src: './_site/deputy/index.html',
+                dest: './_site/deputy/index.html'
+            },
+            chief: {
+                options: {
+                    inline: true,
+                    minify: true,
+                    base: './',
+                    css: [
+                        '_site/e2/css/rv7/publicaffairs/style.css'
+                    ],
+                    dimensions: [{
+                        height: 768,
+                        width: 1366
+                    }, {
+                        height: 640,
+                        width: 360
+                    }, {
+                        height: 568,
+                        width: 320
+                    }]
+                },
+                src: './_site/chief/index.html',
+                dest: './_site/chief/index.html'
             }
         },
         browserify: {
@@ -42,54 +143,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        'sftp-deploy': {
-            build: {
-                auth: {
-                    host: 'frontend.ardev.us',
-                    authKey: 'privateKey'
-                },
-                cache: 'sftpCache.json',
-                src: '_site/',
-                dest: '/www/development/<%= pkg.name %>',
-                exclusions: ['_site/e2'],
-                serverSep: '/',
-                concurrency: 4,
-                progress: true
-            },
-            e2CSSbuild: {
-                auth: {
-                    host: 'frontend.ardev.us',
-                    authKey: 'privateKey'
-                },
-                cache: 'sftpCache.json',
-                src: '_site/e2/css/rv7/<%= pkg.name %>',
-                dest: '/www/development/e2/css/rv7/<%= pkg.name %>',
-                serverSep: '/',
-                concurrency: 4,
-                progress: true
-            },
-            e2JSbuild: {
-                auth: {
-                    host: 'frontend.ardev.us',
-                    authKey: 'privateKey'
-                },
-                cache: 'sftpCache.json',
-                src: '_site/e2/js/rv7/<%= pkg.name %>',
-                dest: '/www/development/e2/js/rv7/<%= pkg.name %>',
-                serverSep: '/',
-                concurrency: 4,
-                progress: true
-            }
-        },
-        watch: {
-            scripts: {
-                files: ['_js/*.js', '_scss/*.scss'],
-                tasks: ['browserify', 'uglify', 'sass'],
-                options: {
-                    spawn: false
-                }
-            }
-        },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -106,27 +159,27 @@ module.exports = function(grunt) {
                     dest: 'e2/js/rv7/<%= pkg.name %>/main.min.js'
                 }]
             }
+        },
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd h:MM:ss TT") %> */\n'
+                },
+                files: {
+                    src: ['_site/e2/js/**/*.js', '_site/e2/css/**/*.css']
+                }
+            }
         }
     });
 
-    grunt.loadNpmTasks('grunt-bump');
-
-    grunt.loadNpmTasks('grunt-sftp-deploy');
-
-    grunt.loadNpmTasks('grunt-text-replace');
-
-    grunt.loadNpmTasks('grunt-browserify');
-
-    grunt.loadNpmTasks('grunt-contrib-sass');
-
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
+    grunt.loadNpmTasks('grunt-critical');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-banner');
 
-    grunt.registerTask('production', ['sass', 'browserify', 'uglify']);
+    grunt.registerTask('production', ['browserify', 'uglify']);
 
-    grunt.registerTask('dev', ['replace:dev', 'sass', 'browserify', 'uglify']);
-
-    grunt.registerTask('cdn', ['replace:cdn', 'sass', 'browserify', 'uglify']);
+    grunt.registerTask('post-production', ['usebanner', 'critical']);
 
 };
